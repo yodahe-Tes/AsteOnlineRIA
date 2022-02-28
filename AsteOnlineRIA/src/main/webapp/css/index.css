@@ -1,0 +1,61 @@
+body{
+	background-image: url("../images/aste.jpg");
+	background-size: cover;
+	padding:10px;
+	margin:10px;
+}
+
+.tableArrangement {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgb(29 0 0 / 84%);
+}
+.tableArrangement thead tr {
+    background-color: #13c8a3;
+    color: #8cf807;
+    text-align: center;
+}
+
+.tableArrangement th,
+.styled-table td {
+    padding: 22px 15px;
+}
+
+.tableArrangement tbody tr {
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+        padding: 320px;
+    
+}
+
+.tableArrangement tbody tr:nth-of-type(even) {
+    background-color: #9df24c;
+	    color: #985555;
+
+}
+
+.tableArrangement tbody tr:nth-of-type(odd) {
+    background-color: #959bbf;
+	    color: #ffffff;
+
+}
+.tableArrangement tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.tableArrangement tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+.paddingBetweenCols td {
+  padding: 0 25px;
+}
+
+.alertmessage {
+		    color:  #ff0000;;
+	
+	
+}

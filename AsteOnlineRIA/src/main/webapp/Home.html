@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-15">
+
+<title>Home</title>
+<link rel="stylesheet" type="text/css" media="all" href="css/mystyle.css" />
+
+<script src="utils.js" charset="utf-8" defer></script>
+<script src="mostraPagine.js" charset="utf-8" defer></script>
+
+</head>
+<body>
+	<div align="right">
+	 <a href="Logout">Logout</a>
+	</div>	
+	<p>Ciao <span id="id_username"></span></p>					
+								<div align="center">
+									<input type= "button" id ="idOpenVendo" value ="Vendo">
+				
+									<input type = "button"  id = "idVaiAdAcquisto" value ="Acquisto">
+								</div>
+	
+	<div id="id_alert" class="alertmessage"></div>	
+
+	<div id = "contenitoreAcquisto">
+	
+			<div>
+				<form id ="iDFormRicerca"  action="#" method="post"  >
+					<fieldset style="width:500px">
+						<p>
+							cerca articolo: <input type="text" name="parola" id ="parola" maxlength="45"  required />
+						</p>
+						<input type="button" value = "Cerca" name="Cerca">
+					 </fieldset>
+				 </form>
+			</div>
+			
+			  <h2>ASTE APERTE</h2>
+			
+			<div>
+				
+					<table id="iDdettAstAprt" class="tableArrangement">
+							<thead>
+								<tr>
+									<th>Codice            </th>
+									<th>Nome              </th>
+									<th>Scadenza          </th>
+						            <th>Link              </th>
+									
+								</tr>
+							</thead>
+							<tbody id= "iDdettAstAprtbody">
+					            <tr>
+							  		<td id= "codice"      ></td>
+									<td id= "nome"     ></td>
+									<td id= "scadenza"   ></td>
+						            <td><a id = "GetOfferta"></a></td>
+									
+								</tr>
+							</tbody>
+							
+			 </table>
+			</div> 
+		
+			<h2>ASTE AGGIUDICATE</h2>
+				
+				 <div>
+					<table id="iDdettAstCsAcq" class="tableArrangement">
+					<thead>
+					<tr>
+						<th>Codice</th>
+						<th>Nome</th>
+						<th>Descrizione</th>
+						<th>Prezzo</th>
+					</tr>
+				</thead>
+				<tbody id= "iDdettAstCsAcqbody">
+					<tr >
+						<td id= "codice"></td>
+						<td id= "nome" ></td>
+						<td id= "descrizione" ></td>
+						<td id= "prezzoAggiudica"></td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+			
+	</div>
+	
+	
+	<div id = "contenitoreOfferta" 	>
+	
+	
+	
+		<h1>OFFERTA</h1>
+		<div >
+		<h2>Dati Articolo</h2>
+	
+		<table id = iDdettArt  class="tableArrangement">
+			<thead>
+				<tr>
+					<th>Codice             </th>
+					<th>Nome Articolo      </th>
+					<th>Prezzo Iniziale    </th>
+					<th>Rialzo Minimo      </th>
+					<th>Scadenza     </th>
+					<th>Immagine           </th>
+					
+				
+				</tr>
+			</thead>
+			<tbody  id = "iDdettArtBody">
+				<tr>
+					<td id ="codiceArticolo"></td>
+					<td id ="nomeArticolo"></td>
+					<td id ="prezzoInizialeArticolo"></td>
+					<td id="rialzoMinimoArticolo"></td>
+					<td id="scadenzaArticolo"></td>
+					<td ><img id="imageArticolo"  width="150" height="150"/></td>
+			
+				
+			
+				</tr>
+			</tbody>
+		</table>
+		</div>
+	
+		<div>
+		<h2>Elenco Offerte</h2>
+		
+		<table id ="iDofferte"  class="tableArrangement">
+			<thead>
+				<tr>
+					<th>id Offerente</th>
+					<th>Prezzo Offerto</th>
+					<th>Data Ora Offerta </th>
+				</tr>
+			</thead>
+			<tbody id="iDofferteBody">
+				<tr >
+					<td id ="idOfferente"></td>
+					<td id ="ammontareOfferta"></td>
+					<td id ="dataOraOfferta"></td>
+				
+				</tr>
+			</tbody>
+		</table>
+		</div >
+	
+		
+	   	 <form id = "iDfaiOffertaFormArticolo" action = "#" >
+	   	 		<fieldset>
+	   	 
+					<p>
+						Fai Offerta: <input type="number" id="ammontareOffertaArticolo"  name="ammontareOffertaArticolo" min="0" step="0.01"  required />
+					</p>
+					
+				<input type="hidden" name="idAstaArticolo" id= "idAstaArticolo"> 
+				<button type="submit" name="FaiOfferta" value="FaiOfferta">Fai Offerta</button>
+			  </fieldset>	
+			</form>
+	</div>
+	
+	
+	<div id = "contenitoreVendo">
+	
+
+				<h1>VENDO</h1>
+				
+				<h2>ASTE APERTE</h2>
+			<div>
+			<table id = "iDdettAstArtcliAprt"  class="tableArrangement" >
+				<thead>
+					<tr>
+						<th>Codice</th>
+						<th>Nome Articolo</th>
+						<th>Offerta massima</th>
+						<th>tempo mancante</th>
+						<th>Link</th>
+					</tr>
+				</thead>
+				<tbody id = "iDdettAstArtcliAprtBody">
+					<tr >
+						<td id ="codice"></td>
+						<td id ="nome"></td>
+						<td><span id ="prezzoAggiudica"></span> €</td>				
+						<td id ="tempoMancante"></td>
+						<td><a id ="GetDettaglioAstaAp">Dettagli Asta</a></td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+				
+				
+				
+				<h2>ASTE CHIUSE</h2>
+			<div>
+			<table id ="dettAstArtcliCs"  class="tableArrangement">
+				<thead>
+					<tr>
+						<th>Codice</th>
+						<th>Nome Articolo</th>
+						<th>Prezzo Aggiudica</th>
+						<th>Link</th>
+					</tr>
+				</thead>
+				<tbody id ="dettAstArtcliCsBody">
+					<tr >
+						<td id ="codice"></td>
+						<td id ="nome"></td>
+						<td id = "prezzoAggiudica" ></td>				
+						<td><a id ="GetDettaglioAstaCs">Dettagli Asta</a></td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+		
+				<p>Inserisci dettagli per creare una nuova asta</p>
+				
+				<form id = "formCreazioneAsta"  action="#" enctype="multipart/form-data" method="post" width >
+					<fieldset style="width:500px">
+						<p>
+							nome Articolo: <input type="text"  maxlength="45"  name="nome" required />
+						</p>
+						<p>
+							Descrizione: <input type="text" name="descrizione" required />
+						</p>
+						<p>
+							Prezzo iniziale: <input type="number" min="0" name="prezzoIniziale" required />
+						</p>
+						<p>
+							Rialzo Minimo: <input type="number" min="0" name="rialzoMinimo" required />
+						</p>
+						<p>
+							scadenza: <input type="datetime-local" name="scadenza" min="2022-02-21T09:54" required />
+						</p>
+						<p>
+						<input type =file name="image" accept="image/*"/><br>
+						</p>			
+						    <input type="button" value="submit" name="submit" class="submit">
+
+					 </fieldset>
+				 </form>
+	
+	</div>
+	
+	
+	
+	   <div id="contenitoreDetAstaAperta" >
+			<h2>Dettaglio Asta</h2>
+			
+			
+			<table id = "iDdetAsta"  class="tableArrangement">
+				<thead>
+					<tr>
+						<th>Codice             </th>
+						<th>Nome Articolo      </th>
+						<th>Descrizione        </th>
+						<th>Prezzo Iniziale    </th>
+						<th>Rialzo Minimo      </th>
+						<th>Scadenza           </th>
+				    	<th>Immagine           </th>
+						
+					</tr>
+				</thead>
+				<tbody id = "iDdetAstaBody">
+					<tr >
+						<td id = "codiceDetAstAp"></td>
+						<td id = "nomeDetAstAp"></td>
+						<td id="descrizioneDetAstAp"></td>
+						<td id="prezzoInizialeDetAstAp"></td>
+						<td id="rialzoMinimoDetAstAp"></td>
+						<td id="scadenzaDetAstAp"></td>
+					<td ><img id="imageDetAstAp"  width="150" height="150"/></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			
+			<table  id = "iDofferteDt"  class="tableArrangement">
+				<thead>
+					<tr>
+						<th>nome Offerente   </th>
+						<th>Prezzo Offerto   </th>
+						<th>Data Offerta     </th>
+					</tr>
+				</thead>
+				<tbody id = "iDofferteDtBody" >
+					<tr>
+						<td id ="nomeOfferente"    ></td>
+						<td id ="ammontareOfferta"></td>
+						<td id ="dataOraOfferta"  ></td>
+					</tr>
+				</tbody>
+			</table>
+			
+				<div >	
+				<form id = "iDChiudiAsta" action = "#" >
+				<input type="hidden" name="idAstaDaChiudere"> 
+				<input type="button" name="Chiudi Asta" value="Chiudi Asta">
+			   </form>
+				</div>
+			</div>
+		
+			<div id = "ContenitoredetAstaChiusa">
+	
+				<h2>ASTE CHIUSE</h2>
+			
+			<table id = "iDdetAstaCs"  class="tableArrangement">
+				<thead>
+					<tr>
+						<th> Codice           </th>
+						<th> Nome Articolo    </th>
+						<th> Prezzo Aggiudica </th>
+						<th> Nome Aggiudicatario</th>
+						<th> Indirizzo di Spedizione</th>
+						<th>Immagine</th>
+						
+						</tr>
+				</thead>
+				<tbody id = "iDdetAstaCsBody">
+					<tr >
+						<td id ="codiceDetAstCs"     ></td>
+						<td id ="nomeDetAstCs"       ></td>
+						<td id ="prezzoAggiudicaDetAstCs"></td>
+						<td id ="vincitoreAstaNomeDetAstCs" ></td>
+						<td id ="vincitoreAstaIndirizzoDetAstCs"></td>
+				    	<td ><img id="imageDetAstCs"  width="150" height="150"/></td>
+						
+					</tr>
+				</tbody>
+			</table>
+			</div>
+	
+	
+	
+</body>
+</html>
