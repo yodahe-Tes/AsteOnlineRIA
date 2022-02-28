@@ -1,7 +1,7 @@
                                              ASTE ONLINE WEB APP PROJECT  
                                              
                                                        
-                                              Thick client architecture
+                                              MVC Thick client architecture
 
 The  web application allows the management of online auctions. Users log in via login and can sell and buy at the auction.
 The HOME page contains two links, one to access the SELL page and one to access the PURCHASE page. The SELL page shows a
